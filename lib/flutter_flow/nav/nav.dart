@@ -260,6 +260,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: QuizGameWidget.routeName,
+          path: QuizGameWidget.routePath,
+          builder: (context, params) => QuizGameWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
