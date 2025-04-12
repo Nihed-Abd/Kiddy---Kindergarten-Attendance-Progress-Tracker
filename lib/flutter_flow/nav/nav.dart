@@ -232,6 +232,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['enfant'],
             ),
           ),
+        ),
+        FFRoute(
+          name: DrawingPageWidget.routeName,
+          path: DrawingPageWidget.routePath,
+          builder: (context, params) => DrawingPageWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: Drawing2Widget.routeName,
+          path: Drawing2Widget.routePath,
+          builder: (context, params) => Drawing2Widget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+            image: params.getParam(
+              'image',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

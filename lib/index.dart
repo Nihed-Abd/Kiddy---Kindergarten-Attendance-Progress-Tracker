@@ -19,3 +19,5 @@ export '/presence/home_presnce/home_presnce_widget.dart' show HomePresnceWidget;
 export '/games/bee_game/bee_game_widget.dart' show BeeGameWidget;
 export '/games/boy_winner/boy_winner_widget.dart' show BoyWinnerWidget;
 export '/games/girl_winner/girl_winner_widget.dart' show GirlWinnerWidget;
+export '/games/drawing_page/drawing_page_widget.dart' show DrawingPageWidget;
+export '/games/drawing2/drawing2_widget.dart' show Drawing2Widget;
