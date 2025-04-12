@@ -84,7 +84,7 @@ class _KidsByClassWidgetState extends State<KidsByClassWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                context.pushNamed(ClassesWidget.routeName);
               },
             ),
             title: Text(

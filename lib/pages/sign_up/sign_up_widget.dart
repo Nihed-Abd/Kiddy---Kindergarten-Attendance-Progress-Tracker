@@ -32,10 +32,10 @@ class _SignUpWidgetState extends State<SignUpWidget>
     super.initState();
     _model = createModel(context, () => SignUpModel());
 
-    _model.emailTextController ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController1 ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
@@ -107,7 +107,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                   'Sign up',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'SF Pro Text',
+                        fontFamily: 'Roboto',
                         fontSize: 28.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'SF Pro Text',
+                        fontFamily: 'Roboto',
                         fontSize: 17.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
@@ -147,7 +147,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                       scrollDirection: Axis.vertical,
                       children: [
                         TextFormField(
-                          controller: _model.emailTextController,
+                          controller: _model.textController1,
                           focusNode: _model.textFieldFocusNode1,
                           autofocus: false,
                           textCapitalization: TextCapitalization.sentences,
@@ -158,7 +158,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 14.0,
@@ -168,7 +168,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   fontSize: 17.0,
@@ -177,7 +177,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             errorStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context).error,
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
@@ -185,7 +185,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).borderColor,
+                                color: FlutterFlowTheme.of(context).accent1,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
@@ -216,19 +216,19 @@ class _SignUpWidgetState extends State<SignUpWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                   ),
                           cursorColor: FlutterFlowTheme.of(context).primary,
-                          validator: _model.emailTextControllerValidator
+                          validator: _model.textController1Validator
                               .asValidator(context),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 26.0, 0.0, 26.0),
                           child: TextFormField(
-                            controller: _model.textController1,
+                            controller: _model.emailTextController,
                             focusNode: _model.textFieldFocusNode2,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
@@ -238,7 +238,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -248,7 +248,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 17.0,
@@ -257,7 +257,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               errorStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context).error,
                                     fontSize: 15.0,
                                     letterSpacing: 0.0,
@@ -265,8 +265,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color:
-                                      FlutterFlowTheme.of(context).borderColor,
+                                  color: FlutterFlowTheme.of(context).accent1,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -299,12 +298,12 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   fontSize: 17.0,
                                   letterSpacing: 0.0,
                                 ),
                             cursorColor: FlutterFlowTheme.of(context).primary,
-                            validator: _model.textController1Validator
+                            validator: _model.emailTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -319,7 +318,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 14.0,
@@ -329,7 +328,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   fontSize: 17.0,
@@ -338,7 +337,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             errorStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF  pro display',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context).error,
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
@@ -346,7 +345,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).borderColor,
+                                color: FlutterFlowTheme.of(context).accent1,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
@@ -391,7 +390,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -414,7 +413,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -424,7 +423,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 17.0,
@@ -433,7 +432,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               errorStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'SF  pro display',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context).error,
                                     fontSize: 15.0,
                                     letterSpacing: 0.0,
@@ -441,8 +440,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color:
-                                      FlutterFlowTheme.of(context).borderColor,
+                                  color: FlutterFlowTheme.of(context).accent1,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -490,7 +488,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   fontSize: 17.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -548,7 +546,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     fontSize: 18.0,
@@ -607,7 +605,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                         )
                       ],
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'SF Pro Text',
+                            fontFamily: 'Roboto',
                             fontSize: 17.0,
                             letterSpacing: 0.0,
                             lineHeight: 1.2,

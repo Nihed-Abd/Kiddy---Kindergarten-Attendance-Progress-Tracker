@@ -9,9 +9,9 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? emailTextController;
-  String? Function(BuildContext, String?)? emailTextControllerValidator;
-  String? _emailTextControllerValidator(BuildContext context, String? val) {
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  String? _textController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Please enter first name';
     }
@@ -21,9 +21,9 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  String? _textController1Validator(BuildContext context, String? val) {
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
+  String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Please enter email address';
     }
@@ -56,8 +56,8 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   @override
   void initState(BuildContext context) {
-    emailTextControllerValidator = _emailTextControllerValidator;
     textController1Validator = _textController1Validator;
+    emailTextControllerValidator = _emailTextControllerValidator;
     passwordVisibility1 = false;
     passwordTextControllerValidator = _passwordTextControllerValidator;
     passwordVisibility2 = false;
@@ -66,10 +66,10 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   @override
   void dispose() {
     textFieldFocusNode1?.dispose();
-    emailTextController?.dispose();
+    textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textController1?.dispose();
+    emailTextController?.dispose();
 
     textFieldFocusNode3?.dispose();
     passwordTextController?.dispose();

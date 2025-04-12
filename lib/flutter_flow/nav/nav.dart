@@ -294,6 +294,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ChooseKidWidget.routeName,
           path: ChooseKidWidget.routePath,
           builder: (context, params) => ChooseKidWidget(),
+        ),
+        FFRoute(
+          name: PresenceDetailsWidget.routeName,
+          path: PresenceDetailsWidget.routePath,
+          builder: (context, params) => PresenceDetailsWidget(
+            presence: params.getParam(
+              'presence',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Presence'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: PresenceByClassesWidget.routeName,
+          path: PresenceByClassesWidget.routePath,
+          builder: (context, params) => PresenceByClassesWidget(
+            presence: params.getParam(
+              'presence',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Presence'],
+            ),
+            classe: params.getParam(
+              'classe',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Classe'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

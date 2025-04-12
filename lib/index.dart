@@ -31,3 +31,7 @@ export '/games/reactions/bravo_reaction/bravo_reaction_widget.dart'
     show BravoReactionWidget;
 export '/games/reactions/choose_kid/choose_kid_widget.dart'
     show ChooseKidWidget;
+export '/presence/presence_details/presence_details_widget.dart'
+    show PresenceDetailsWidget;
+export '/presence/presence_by_classes/presence_by_classes_widget.dart'
+    show PresenceByClassesWidget;

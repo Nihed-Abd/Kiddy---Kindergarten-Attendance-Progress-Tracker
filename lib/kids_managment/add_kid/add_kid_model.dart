@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
@@ -7,11 +8,6 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class AddKidModel extends FlutterFlowModel<AddKidWidget> {
   ///  State fields for stateful widgets in this page.
-
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
@@ -26,10 +22,20 @@ class AddKidModel extends FlutterFlowModel<AddKidWidget> {
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   DateTime? datePicked;
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+
+  // Stores action output result for [Custom Action - uploadImage] action in Button widget.
+  String? link1;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Custom Action - uploadImage] action in Container widget.
+  String? link2;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  EnfantRecord? kid;
 
   @override
   void initState(BuildContext context) {}

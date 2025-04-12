@@ -178,8 +178,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).lightGrey,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
@@ -260,8 +260,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).lightGrey,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
@@ -342,8 +342,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).lightGrey,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
@@ -424,8 +424,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).lightGrey,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
@@ -547,7 +547,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   Container(
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .lightGrey,
+                                          .primaryBackground,
                                       shape: BoxShape.circle,
                                     ),
                                     child: Padding(

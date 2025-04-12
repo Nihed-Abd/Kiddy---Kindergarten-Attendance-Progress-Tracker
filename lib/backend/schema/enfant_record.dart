@@ -51,6 +51,11 @@ class EnfantRecord extends FirestoreRecord {
   Gender? get gender => _gender;
   bool hasGender() => _gender != null;
 
+  // "classe" field.
+  DocumentReference? _classe;
+  DocumentReference? get classe => _classe;
+  bool hasClasse() => _classe != null;
+
   void _initializeFields() {
     _nomComplet = snapshotData['nomComplet'] as String?;
     _picture = snapshotData['picture'] as String?;
@@ -61,6 +66,7 @@ class EnfantRecord extends FirestoreRecord {
     _gender = snapshotData['gender'] is Gender
         ? snapshotData['gender']
         : deserializeEnum<Gender>(snapshotData['gender']);
+    _classe = snapshotData['classe'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -104,6 +110,7 @@ Map<String, dynamic> createEnfantRecordData({
   String? numTelParent,
   String? motivate,
   Gender? gender,
+  DocumentReference? classe,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -114,6 +121,7 @@ Map<String, dynamic> createEnfantRecordData({
       'numTelParent': numTelParent,
       'motivate': motivate,
       'gender': gender,
+      'classe': classe,
     }.withoutNulls,
   );
 
@@ -131,7 +139,8 @@ class EnfantRecordDocumentEquality implements Equality<EnfantRecord> {
         e1?.dossierMedical == e2?.dossierMedical &&
         e1?.numTelParent == e2?.numTelParent &&
         e1?.motivate == e2?.motivate &&
-        e1?.gender == e2?.gender;
+        e1?.gender == e2?.gender &&
+        e1?.classe == e2?.classe;
   }
 
   @override
@@ -142,7 +151,8 @@ class EnfantRecordDocumentEquality implements Equality<EnfantRecord> {
         e?.dossierMedical,
         e?.numTelParent,
         e?.motivate,
-        e?.gender
+        e?.gender,
+        e?.classe
       ]);
 
   @override

@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -8,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -132,123 +132,6 @@ class _AddKidWidgetState extends State<AddKidWidget>
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFDBE2E7),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(2.0),
-                      child: Container(
-                        width: 90.0,
-                        height: 90.0,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Image.network(
-                          valueOrDefault<String>(
-                            _model.uploadedFileUrl1,
-                            'https://pics.craiyon.com/2023-09-26/91a8949b1a434e2d9d1a59ac53c0db14.webp',
-                          ),
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () async {
-                        final selectedMedia =
-                            await selectMediaWithSourceBottomSheet(
-                          context: context,
-                          allowPhoto: true,
-                        );
-                        if (selectedMedia != null &&
-                            selectedMedia.every((m) =>
-                                validateFileFormat(m.storagePath, context))) {
-                          safeSetState(() => _model.isDataUploading1 = true);
-                          var selectedUploadedFiles = <FFUploadedFile>[];
-
-                          var downloadUrls = <String>[];
-                          try {
-                            selectedUploadedFiles = selectedMedia
-                                .map((m) => FFUploadedFile(
-                                      name: m.storagePath.split('/').last,
-                                      bytes: m.bytes,
-                                      height: m.dimensions?.height,
-                                      width: m.dimensions?.width,
-                                      blurHash: m.blurHash,
-                                    ))
-                                .toList();
-
-                            downloadUrls = (await Future.wait(
-                              selectedMedia.map(
-                                (m) async =>
-                                    await uploadData(m.storagePath, m.bytes),
-                              ),
-                            ))
-                                .where((u) => u != null)
-                                .map((u) => u!)
-                                .toList();
-                          } finally {
-                            _model.isDataUploading1 = false;
-                          }
-                          if (selectedUploadedFiles.length ==
-                                  selectedMedia.length &&
-                              downloadUrls.length == selectedMedia.length) {
-                            safeSetState(() {
-                              _model.uploadedLocalFile1 =
-                                  selectedUploadedFiles.first;
-                              _model.uploadedFileUrl1 = downloadUrls.first;
-                            });
-                          } else {
-                            safeSetState(() {});
-                            return;
-                          }
-                        }
-                      },
-                      text: 'Upload Picture',
-                      options: FFButtonOptions(
-                        width: 130.0,
-                        height: 40.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                        elevation: 2.0,
-                        borderSide: BorderSide(
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
                 child: TextFormField(
@@ -481,6 +364,92 @@ class _AddKidWidgetState extends State<AddKidWidget>
                 ),
               ),
               Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FFButtonWidget(
+                      onPressed: () async {
+                        final selectedFiles = await selectFiles(
+                          multiFile: false,
+                        );
+                        if (selectedFiles != null) {
+                          safeSetState(() => _model.isDataUploading1 = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+
+                          try {
+                            showUploadMessage(
+                              context,
+                              'Uploading file...',
+                              showLoading: true,
+                            );
+                            selectedUploadedFiles = selectedFiles
+                                .map((m) => FFUploadedFile(
+                                      name: m.storagePath.split('/').last,
+                                      bytes: m.bytes,
+                                    ))
+                                .toList();
+                          } finally {
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                            _model.isDataUploading1 = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                              selectedFiles.length) {
+                            safeSetState(() {
+                              _model.uploadedLocalFile1 =
+                                  selectedUploadedFiles.first;
+                            });
+                            showUploadMessage(
+                              context,
+                              'Success!',
+                            );
+                          } else {
+                            safeSetState(() {});
+                            showUploadMessage(
+                              context,
+                              'Failed to upload file',
+                            );
+                            return;
+                          }
+                        }
+
+                        _model.link1 = await actions.uploadImage(
+                          context,
+                          _model.uploadedLocalFile1,
+                        );
+
+                        safeSetState(() {});
+                      },
+                      text: 'Upload Picture',
+                      options: FFButtonOptions(
+                        width: 130.0,
+                        height: 40.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  fontSize: 14.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                        elevation: 2.0,
+                        borderSide: BorderSide(
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
@@ -499,7 +468,6 @@ class _AddKidWidgetState extends State<AddKidWidget>
                       safeSetState(() => _model.isDataUploading2 = true);
                       var selectedUploadedFiles = <FFUploadedFile>[];
 
-                      var downloadUrls = <String>[];
                       try {
                         selectedUploadedFiles = selectedMedia
                             .map((m) => FFUploadedFile(
@@ -510,32 +478,27 @@ class _AddKidWidgetState extends State<AddKidWidget>
                                   blurHash: m.blurHash,
                                 ))
                             .toList();
-
-                        downloadUrls = (await Future.wait(
-                          selectedMedia.map(
-                            (m) async =>
-                                await uploadData(m.storagePath, m.bytes),
-                          ),
-                        ))
-                            .where((u) => u != null)
-                            .map((u) => u!)
-                            .toList();
                       } finally {
                         _model.isDataUploading2 = false;
                       }
                       if (selectedUploadedFiles.length ==
-                              selectedMedia.length &&
-                          downloadUrls.length == selectedMedia.length) {
+                          selectedMedia.length) {
                         safeSetState(() {
                           _model.uploadedLocalFile2 =
                               selectedUploadedFiles.first;
-                          _model.uploadedFileUrl2 = downloadUrls.first;
                         });
                       } else {
                         safeSetState(() {});
                         return;
                       }
                     }
+
+                    _model.link2 = await actions.uploadImage(
+                      context,
+                      _model.uploadedLocalFile2,
+                    );
+
+                    safeSetState(() {});
                   },
                   child: Container(
                     width: double.infinity,
@@ -587,19 +550,41 @@ class _AddKidWidgetState extends State<AddKidWidget>
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      await EnfantRecord.collection
-                          .doc()
-                          .set(createEnfantRecordData(
-                            picture: _model.uploadedFileUrl1,
+                      var enfantRecordReference = EnfantRecord.collection.doc();
+                      await enfantRecordReference.set(createEnfantRecordData(
+                        picture: _model.link1,
+                        nomComplet: _model.textController1.text,
+                        dateBirth: _model.datePicked,
+                        numTelParent: _model.emailAddressTextController.text,
+                        dossierMedical: _model.link2,
+                        gender: _model.dropDownValue == Gender.BOY.name
+                            ? Gender.BOY
+                            : Gender.GIRL,
+                        classe: widget.classe,
+                      ));
+                      _model.kid = EnfantRecord.getDocumentFromData(
+                          createEnfantRecordData(
+                            picture: _model.link1,
                             nomComplet: _model.textController1.text,
                             dateBirth: _model.datePicked,
                             numTelParent:
                                 _model.emailAddressTextController.text,
-                            dossierMedical: _model.uploadedFileUrl2,
+                            dossierMedical: _model.link2,
                             gender: _model.dropDownValue == Gender.BOY.name
                                 ? Gender.BOY
                                 : Gender.GIRL,
-                          ));
+                            classe: widget.classe,
+                          ),
+                          enfantRecordReference);
+
+                      await widget.classe!.update({
+                        ...mapToFirestore(
+                          {
+                            'Students':
+                                FieldValue.arrayUnion([_model.kid?.reference]),
+                          },
+                        ),
+                      });
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
@@ -626,6 +611,8 @@ class _AddKidWidgetState extends State<AddKidWidget>
                           ),
                         }.withoutNulls,
                       );
+
+                      safeSetState(() {});
                     },
                     text: 'Add now',
                     options: FFButtonOptions(

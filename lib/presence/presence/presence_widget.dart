@@ -1,10 +1,8 @@
 import '/backend/backend.dart';
 import '/backend/schema/enums/enums.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -222,7 +220,7 @@ class _PresenceWidgetState extends State<PresenceWidget> {
                                   ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0x00000000),
+                              color: FlutterFlowTheme.of(context).alternate,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
@@ -250,7 +248,7 @@ class _PresenceWidgetState extends State<PresenceWidget> {
                           ),
                           filled: true,
                           fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                              FlutterFlowTheme.of(context).primaryBackground,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
@@ -262,206 +260,308 @@ class _PresenceWidgetState extends State<PresenceWidget> {
                       ),
                     ),
                   ),
-                  StreamBuilder<List<ClasseRecord>>(
-                    stream: queryClasseRecord(),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
+                ].divide(SizedBox(width: 10.0)),
+              ),
+            ),
+            if (_model.textController.text == '')
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: StreamBuilder<List<EnfantRecord>>(
+                  stream: queryEnfantRecord(),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<EnfantRecord> listViewEnfantRecordList =
+                        snapshot.data!;
+
+                    return ListView.builder(
+                      padding: EdgeInsets.zero,
+                      primary: false,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: listViewEnfantRecordList.length,
+                      itemBuilder: (context, listViewIndex) {
+                        final listViewEnfantRecord =
+                            listViewEnfantRecordList[listViewIndex];
+                        return Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 8.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                SelectGameWidget.routeName,
+                                queryParameters: {
+                                  'id': serializeParam(
+                                    listViewEnfantRecord.reference,
+                                    ParamType.DocumentReference,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 3.0,
+                                    color: Color(0x411D2429),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 1.0, 1.0, 1.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(6.0),
+                                        child: Image.network(
+                                          listViewEnfantRecord.picture,
+                                          width: 80.0,
+                                          height: 80.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 4.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              listViewEnfantRecord.nomComplet,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineSmall
+                                                  .override(
+                                                    fontFamily: 'Inter Tight',
+                                                    color: listViewEnfantRecord
+                                                                .gender ==
+                                                            Gender.BOY
+                                                        ? Color(0xFF0013FF)
+                                                        : Color(0xFFC8009D),
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: Icon(
+                                            Icons.chevron_right_rounded,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         );
-                      }
-                      List<ClasseRecord> dropDownClasseRecordList =
-                          snapshot.data!;
-
-                      return FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController ??=
-                            FormFieldController<String>(null),
-                        options: dropDownClasseRecordList
-                            .map((e) => e.name)
-                            .toList(),
-                        onChanged: (val) =>
-                            safeSetState(() => _model.dropDownValue = val),
-                        width: 174.59,
-                        height: 40.0,
-                        textStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                        hintText: 'Class ...',
-                        icon: Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 24.0,
-                        ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        elevation: 2.0,
-                        borderColor: Colors.transparent,
-                        borderWidth: 0.0,
-                        borderRadius: 8.0,
-                        margin: EdgeInsetsDirectional.fromSTEB(
-                            12.0, 0.0, 12.0, 0.0),
-                        hidesUnderline: true,
-                        isOverButton: false,
-                        isSearchable: false,
-                        isMultiSelect: false,
-                      );
-                    },
-                  ),
-                ].divide(SizedBox(width: 10.0)),
+                      },
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-              child: StreamBuilder<List<EnfantRecord>>(
-                stream: queryEnfantRecord(),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
+            if (_model.textController.text != '')
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: StreamBuilder<List<EnfantRecord>>(
+                  stream: queryEnfantRecord(
+                    queryBuilder: (enfantRecord) => enfantRecord.where(
+                      'nomComplet',
+                      isEqualTo: _model.textController.text,
+                    ),
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }
-                  List<EnfantRecord> listViewEnfantRecordList = snapshot.data!;
+                      );
+                    }
+                    List<EnfantRecord> listViewEnfantRecordList =
+                        snapshot.data!;
 
-                  return ListView.builder(
-                    padding: EdgeInsets.zero,
-                    primary: false,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    itemCount: listViewEnfantRecordList.length,
-                    itemBuilder: (context, listViewIndex) {
-                      final listViewEnfantRecord =
-                          listViewEnfantRecordList[listViewIndex];
-                      return Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              SelectGameWidget.routeName,
-                              queryParameters: {
-                                'id': serializeParam(
-                                  listViewEnfantRecord.reference,
-                                  ParamType.DocumentReference,
-                                ),
-                              }.withoutNulls,
-                            );
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 3.0,
-                                  color: Color(0x411D2429),
-                                  offset: Offset(
-                                    0.0,
-                                    1.0,
+                    return ListView.builder(
+                      padding: EdgeInsets.zero,
+                      primary: false,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: listViewEnfantRecordList.length,
+                      itemBuilder: (context, listViewIndex) {
+                        final listViewEnfantRecord =
+                            listViewEnfantRecordList[listViewIndex];
+                        return Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 8.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                SelectGameWidget.routeName,
+                                queryParameters: {
+                                  'id': serializeParam(
+                                    listViewEnfantRecord.reference,
+                                    ParamType.DocumentReference,
                                   ),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 1.0, 1.0, 1.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(6.0),
-                                      child: Image.network(
-                                        listViewEnfantRecord.picture,
-                                        width: 80.0,
-                                        height: 80.0,
-                                        fit: BoxFit.cover,
-                                      ),
+                                }.withoutNulls,
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 3.0,
+                                    color: Color(0x411D2429),
+                                    offset: Offset(
+                                      0.0,
+                                      1.0,
                                     ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 8.0, 4.0, 0.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            listViewEnfantRecord.nomComplet,
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Inter Tight',
-                                                  color: listViewEnfantRecord
-                                                              .gender ==
-                                                          Gender.BOY
-                                                      ? Color(0xFF0013FF)
-                                                      : Color(0xFFC8009D),
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Icon(
-                                          Icons.chevron_right_rounded,
-                                          color: Color(0xFF57636C),
-                                          size: 24.0,
+                                          0.0, 1.0, 1.0, 1.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(6.0),
+                                        child: Image.network(
+                                          listViewEnfantRecord.picture,
+                                          width: 80.0,
+                                          height: 80.0,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 4.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              listViewEnfantRecord.nomComplet,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineSmall
+                                                  .override(
+                                                    fontFamily: 'Inter Tight',
+                                                    color: listViewEnfantRecord
+                                                                .gender ==
+                                                            Gender.BOY
+                                                        ? Color(0xFF0013FF)
+                                                        : Color(0xFFC8009D),
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: Icon(
+                                            Icons.chevron_right_rounded,
+                                            color: Color(0xFF57636C),
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  );
-                },
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
-            ),
           ],
         ),
       ),

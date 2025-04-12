@@ -122,7 +122,7 @@ class _SignInWidgetState extends State<SignInWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -143,7 +143,7 @@ class _SignInWidgetState extends State<SignInWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -163,7 +163,7 @@ class _SignInWidgetState extends State<SignInWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 14.0,
@@ -173,15 +173,16 @@ class _SignInWidgetState extends State<SignInWidget>
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
-                                  color: FlutterFlowTheme.of(context).black40,
+                                  fontFamily: 'Roboto',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                   fontSize: 17.0,
                                   letterSpacing: 0.0,
                                 ),
                             errorStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context).error,
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
@@ -220,7 +221,7 @@ class _SignInWidgetState extends State<SignInWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -243,7 +244,7 @@ class _SignInWidgetState extends State<SignInWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -253,15 +254,16 @@ class _SignInWidgetState extends State<SignInWidget>
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'SF Pro Text',
-                                    color: FlutterFlowTheme.of(context).black40,
+                                    fontFamily: 'Roboto',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                   ),
                               errorStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context).error,
                                     fontSize: 15.0,
                                     letterSpacing: 0.0,
@@ -308,7 +310,8 @@ class _SignInWidgetState extends State<SignInWidget>
                                   _model.passwordVisibility
                                       ? Icons.visibility_outlined
                                       : Icons.visibility_off_outlined,
-                                  color: FlutterFlowTheme.of(context).black40,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
                                   size: 24.0,
                                 ),
                               ),
@@ -316,7 +319,7 @@ class _SignInWidgetState extends State<SignInWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   fontSize: 17.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -344,7 +347,7 @@ class _SignInWidgetState extends State<SignInWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'SF Pro Text',
+                                      fontFamily: 'Roboto',
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
@@ -386,7 +389,7 @@ class _SignInWidgetState extends State<SignInWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'SF Pro Text',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   fontSize: 18.0,
@@ -436,7 +439,7 @@ class _SignInWidgetState extends State<SignInWidget>
                         TextSpan(
                           text: ' Sign up',
                           style: GoogleFonts.getFont(
-                            'SF  pro display',
+                            'Roboto',
                             color: FlutterFlowTheme.of(context).primary,
                             fontWeight: FontWeight.w500,
                             fontSize: 16.0,

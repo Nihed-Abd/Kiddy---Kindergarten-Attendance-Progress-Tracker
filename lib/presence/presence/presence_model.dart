@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'presence_widget.dart' show PresenceWidget;
 import 'package:flutter/material.dart';
@@ -11,9 +10,6 @@ class PresenceModel extends FlutterFlowModel<PresenceWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
 
   @override
   void initState(BuildContext context) {}
