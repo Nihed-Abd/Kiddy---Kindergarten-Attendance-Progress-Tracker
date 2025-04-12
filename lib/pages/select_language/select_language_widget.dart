@@ -65,6 +65,7 @@ class _SelectLanguageWidgetState extends State<SelectLanguageWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     setAppLanguage(context, 'ar');
+                    Navigator.pop(context);
                   },
                   child: Container(
                     width: double.infinity,
@@ -106,6 +107,7 @@ class _SelectLanguageWidgetState extends State<SelectLanguageWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     setAppLanguage(context, 'en');
+                    Navigator.pop(context);
                   },
                   child: Container(
                     width: double.infinity,
