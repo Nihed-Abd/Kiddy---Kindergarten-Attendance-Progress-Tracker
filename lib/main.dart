@@ -172,11 +172,11 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.home_outlined,
+                  Icons.psychology,
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).primary
                       : FlutterFlowTheme.of(context).secondaryText,
-                  size: 28.0,
+                  size: 35.0,
                 ),
                 Text(
                   'Home',

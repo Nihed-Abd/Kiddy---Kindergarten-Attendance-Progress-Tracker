@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'home_widget.dart' show HomeWidget;
+import 'choose_kid_widget.dart' show ChooseKidWidget;
 import 'package:flutter/material.dart';
 
-class HomeModel extends FlutterFlowModel<HomeWidget> {
+class ChooseKidModel extends FlutterFlowModel<ChooseKidWidget> {
   @override
   void initState(BuildContext context) {}
 

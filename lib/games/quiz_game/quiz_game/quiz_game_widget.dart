@@ -4,7 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/games/incorrect/incorrect_widget.dart';
+import '/games/quiz_game/incorrect/incorrect_widget.dart';
 import '/games/rank_points_table/rank_points_table_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';

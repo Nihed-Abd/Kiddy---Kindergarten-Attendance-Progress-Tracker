@@ -272,6 +272,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['enfant'],
             ),
           ),
+        ),
+        FFRoute(
+          name: ReactionAngryWidget.routeName,
+          path: ReactionAngryWidget.routePath,
+          builder: (context, params) => ReactionAngryWidget(),
+        ),
+        FFRoute(
+          name: BravoReactionWidget.routeName,
+          path: BravoReactionWidget.routePath,
+          builder: (context, params) => BravoReactionWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ChooseKidWidget.routeName,
+          path: ChooseKidWidget.routePath,
+          builder: (context, params) => ChooseKidWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

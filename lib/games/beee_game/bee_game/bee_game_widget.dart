@@ -1,6 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/games/bee/bee_widget.dart';
+import '/games/beee_game/bee/bee_widget.dart';
 import 'package:flutter/material.dart';
 import 'bee_game_model.dart';
 export 'bee_game_model.dart';
