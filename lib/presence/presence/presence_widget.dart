@@ -66,7 +66,9 @@ class _PresenceWidgetState extends State<PresenceWidget> {
           ),
         ),
         title: Text(
-          'Today Presence',
+          FFLocalizations.of(context).getText(
+            'qtsv9shd' /* Today Presence */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Inter Tight',
                 color: FlutterFlowTheme.of(context).primaryBackground,
@@ -212,7 +214,9 @@ class _PresenceWidgetState extends State<PresenceWidget> {
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                          hintText: 'Search',
+                          hintText: FFLocalizations.of(context).getText(
+                            'xpsm3nxp' /* Search */,
+                          ),
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',

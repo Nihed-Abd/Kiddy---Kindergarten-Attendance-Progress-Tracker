@@ -167,7 +167,9 @@ class _RankPointsTableWidgetState extends State<RankPointsTableWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Points',
+                            FFLocalizations.of(context).getText(
+                              'ij32fjmz' /* Points */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Inter',
@@ -197,7 +199,9 @@ class _RankPointsTableWidgetState extends State<RankPointsTableWidget> {
                                   snapshot.data!;
 
                               return Text(
-                                '+10 ',
+                                FFLocalizations.of(context).getText(
+                                  'u3dio8jh' /* +10  */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

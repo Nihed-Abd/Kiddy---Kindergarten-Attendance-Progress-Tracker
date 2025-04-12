@@ -86,7 +86,9 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 0.0, 0.0),
                 child: Text(
-                  'Kid Make Presence by playing a Game',
+                  FFLocalizations.of(context).getText(
+                    'u2sqias2' /* Kid Make Presence by playing a... */,
+                  ),
                   textAlign: TextAlign.end,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -128,7 +130,9 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                               24.0, 0.0, 24.0, 0.0),
                           tabs: [
                             Tab(
-                              text: 'Games',
+                              text: FFLocalizations.of(context).getText(
+                                'xwnf5l03' /* Games */,
+                              ),
                             ),
                           ],
                           controller: _model.tabBarController,
@@ -220,7 +224,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Draw',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'ynih5bzv' /* Draw */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge
@@ -283,7 +291,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                                         12.0,
                                                                         0.0),
                                                             child: Text(
-                                                              '10 Points',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'resm7adn' /* 10 Points */,
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -379,7 +391,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Bee',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'xfu3oygj' /* Bee */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge
@@ -442,7 +458,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                                         12.0,
                                                                         0.0),
                                                             child: Text(
-                                                              '10 Points',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'dkvcc55c' /* 10 Points */,
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -538,7 +558,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Quiz',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '9ykfnroi' /* Quiz */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge
@@ -601,7 +625,11 @@ class _SelectGameWidgetState extends State<SelectGameWidget>
                                                                         12.0,
                                                                         0.0),
                                                             child: Text(
-                                                              '10 Points',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'uc9ly48j' /* 10 Points */,
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium

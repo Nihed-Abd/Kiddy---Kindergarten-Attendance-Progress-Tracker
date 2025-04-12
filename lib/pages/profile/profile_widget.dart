@@ -51,7 +51,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           title: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Text(
-              'Profile',
+              FFLocalizations.of(context).getText(
+                'eiz0h5ql' /* Profile */,
+              ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Inter Tight',
                     color: Colors.white,
@@ -148,82 +150,94 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 24.0, 0.0, 16.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 16.0,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(ClassesWidget.routeName);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 16.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  offset: Offset(
+                                    0.0,
+                                    4.0,
+                                  ),
+                                  spreadRadius: 0.0,
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                              border: Border.all(
                                 color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                offset: Offset(
-                                  0.0,
-                                  4.0,
-                                ),
-                                spreadRadius: 0.0,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                                    .secondaryBackground,
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 16.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: SvgPicture.asset(
-                                        'assets/images/pitjf_1.svg',
-                                        width: 24.0,
-                                        height: 24.0,
-                                        fit: BoxFit.contain,
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 16.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/pitjf_1.svg',
+                                          width: 24.0,
+                                          height: 24.0,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Kids',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 17.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            lineHeight: 1.5,
-                                          ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ft2blr1t' /* Kids */,
+                                        ),
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 17.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              lineHeight: 1.5,
+                                            ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(0.0),
-                                  child: SvgPicture.asset(
-                                    'assets/images/Profile-back.svg',
-                                    width: 20.0,
-                                    height: 20.0,
-                                    fit: BoxFit.cover,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: SvgPicture.asset(
+                                      'assets/images/Profile-back.svg',
+                                      width: 20.0,
+                                      height: 20.0,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -231,81 +245,93 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 16.0,
-                                color: Color(0x14000000),
-                                offset: Offset(
-                                  0.0,
-                                  4.0,
-                                ),
-                                spreadRadius: 0.0,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(HomePresnceWidget.routeName);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 16.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    shape: BoxShape.circle,
+                                  .primaryBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 16.0,
+                                  color: Color(0x14000000),
+                                  offset: Offset(
+                                    0.0,
+                                    4.0,
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: SvgPicture.asset(
-                                        'assets/images/mvea8_3.svg',
-                                        width: 24.0,
-                                        height: 24.0,
-                                        fit: BoxFit.contain,
+                                  spreadRadius: 0.0,
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 16.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/mvea8_3.svg',
+                                          width: 24.0,
+                                          height: 24.0,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Presence',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 17.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            lineHeight: 1.5,
-                                          ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          's53dm9ek' /* Presence */,
+                                        ),
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 17.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              lineHeight: 1.5,
+                                            ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(0.0),
-                                  child: SvgPicture.asset(
-                                    'assets/images/Profile-back.svg',
-                                    width: 20.0,
-                                    height: 20.0,
-                                    fit: BoxFit.cover,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: SvgPicture.asset(
+                                      'assets/images/Profile-back.svg',
+                                      width: 20.0,
+                                      height: 20.0,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -313,163 +339,93 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 16.0,
-                                color: Color(0x14000000),
-                                offset: Offset(
-                                  0.0,
-                                  4.0,
-                                ),
-                                spreadRadius: 0.0,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(SettingsWidget.routeName);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 16.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    shape: BoxShape.circle,
+                                  .primaryBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 16.0,
+                                  color: Color(0x14000000),
+                                  offset: Offset(
+                                    0.0,
+                                    4.0,
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: SvgPicture.asset(
-                                        'assets/images/k1ryn_2.svg',
-                                        width: 24.0,
-                                        height: 24.0,
-                                        fit: BoxFit.contain,
+                                  spreadRadius: 0.0,
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(12.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 16.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/e4z82_4.svg',
+                                          width: 24.0,
+                                          height: 24.0,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Privacy policy',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 17.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            lineHeight: 1.5,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(0.0),
-                                  child: SvgPicture.asset(
-                                    'assets/images/Profile-back.svg',
-                                    width: 20.0,
-                                    height: 20.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 16.0,
-                                color: Color(0x14000000),
-                                offset: Offset(
-                                  0.0,
-                                  4.0,
-                                ),
-                                spreadRadius: 0.0,
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(12.0),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 16.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: SvgPicture.asset(
-                                        'assets/images/e4z82_4.svg',
-                                        width: 24.0,
-                                        height: 24.0,
-                                        fit: BoxFit.contain,
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'qpyft5ui' /* Settings */,
+                                        ),
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 17.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              lineHeight: 1.5,
+                                            ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Settings',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 17.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            lineHeight: 1.5,
-                                          ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: SvgPicture.asset(
+                                      'assets/images/Profile-back.svg',
+                                      width: 20.0,
+                                      height: 20.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(0.0),
-                                  child: SvgPicture.asset(
-                                    'assets/images/Profile-back.svg',
-                                    width: 20.0,
-                                    height: 20.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -569,7 +525,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Log out',
+                                        FFLocalizations.of(context).getText(
+                                          'kwgnxv9u' /* Log out */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -628,7 +586,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
-                                    'This  Applcation was Developed With Love By',
+                                    FFLocalizations.of(context).getText(
+                                      'i1f5ofya' /* This  Applcation was Developed... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -640,7 +600,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
-                                    'Nihed BenAbdennour',
+                                    FFLocalizations.of(context).getText(
+                                      '1reid8v0' /* Nihed BenAbdennour */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

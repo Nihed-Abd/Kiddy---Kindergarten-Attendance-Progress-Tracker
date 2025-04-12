@@ -98,7 +98,9 @@ class _DrawingPageWidgetState extends State<DrawingPageWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Draw Something',
+                                        FFLocalizations.of(context).getText(
+                                          'urroh54p' /* Draw Something */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
@@ -274,7 +276,12 @@ class _DrawingPageWidgetState extends State<DrawingPageWidget> {
                                                             }.withoutNulls,
                                                           );
                                                         },
-                                                        text: 'Next',
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'gry64qfe' /* Next */,
+                                                        ),
                                                         options:
                                                             FFButtonOptions(
                                                           width:

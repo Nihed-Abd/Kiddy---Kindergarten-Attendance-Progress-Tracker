@@ -235,7 +235,9 @@ class _BravoReactionWidgetState extends State<BravoReactionWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Bravoooooo !',
+                                        FFLocalizations.of(context).getText(
+                                          '0rlmityy' /* Bravoooooo ! */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
@@ -275,11 +277,18 @@ class _BravoReactionWidgetState extends State<BravoReactionWidget>
                                     date: getCurrentTimestamp,
                                   ));
 
+                                  await columnEnfantRecord.reference
+                                      .update(createEnfantRecordData(
+                                    score: columnEnfantRecord.score + 10,
+                                  ));
+
                                   context.pushNamed(HomeWidget.routeName);
 
                                   _model.soundPlayer?.stop();
                                 },
-                                text: 'التالي',
+                                text: FFLocalizations.of(context).getText(
+                                  'gcz0zpdb' /* التالي */,
+                                ),
                                 icon: Icon(
                                   Icons.navigate_next_rounded,
                                   color: FlutterFlowTheme.of(context)

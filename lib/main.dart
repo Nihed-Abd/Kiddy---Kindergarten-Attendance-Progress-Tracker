@@ -9,6 +9,7 @@ import 'auth/firebase_auth/auth_util.dart';
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'flutter_flow/internationalization.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
@@ -18,6 +19,8 @@ void main() async {
   usePathUrlStrategy();
 
   await initFirebase();
+
+  await FFLocalizations.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
@@ -38,6 +41,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Locale? _locale = FFLocalizations.getStoredLocale();
+
   ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
@@ -84,6 +89,11 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
+  void setLocale(String language) {
+    safeSetState(() => _locale = createLocale(language));
+    FFLocalizations.storeLocale(language);
+  }
+
   void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
       });
@@ -94,11 +104,18 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'ProjectKids',
       localizationsDelegates: [
+        FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
+        FallbackMaterialLocalizationDelegate(),
+        FallbackCupertinoLocalizationDelegate(),
       ],
-      supportedLocales: const [Locale('en', '')],
+      locale: _locale,
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
+      ],
       theme: ThemeData(
         brightness: Brightness.light,
         useMaterial3: false,
@@ -179,7 +196,9 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 35.0,
                 ),
                 Text(
-                  'Home',
+                  FFLocalizations.of(context).getText(
+                    'gz8kql1e' /* Home */,
+                  ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 0
@@ -203,7 +222,9 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 35.0,
                 ),
                 Text(
-                  'Classes',
+                  FFLocalizations.of(context).getText(
+                    'vh43mxnk' /* Classes */,
+                  ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 1
@@ -227,7 +248,9 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 28.0,
                 ),
                 Text(
-                  'Presence',
+                  FFLocalizations.of(context).getText(
+                    'x0f0c9bk' /* Presence */,
+                  ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 2
@@ -251,7 +274,9 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 28.0,
                 ),
                 Text(
-                  'Profile',
+                  FFLocalizations.of(context).getText(
+                    '6r47vpz7' /* Profile */,
+                  ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 3

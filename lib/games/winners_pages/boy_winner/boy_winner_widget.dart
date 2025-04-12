@@ -238,7 +238,9 @@ class _BoyWinnerWidgetState extends State<BoyWinnerWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          'Good Morning',
+                                          FFLocalizations.of(context).getText(
+                                            'enwa6czb' /* Good Morning */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -287,7 +289,9 @@ class _BoyWinnerWidgetState extends State<BoyWinnerWidget>
 
                                     context.pushNamed(PresenceWidget.routeName);
                                   },
-                                  text: 'Done',
+                                  text: FFLocalizations.of(context).getText(
+                                    'fa7tmjuj' /* Done */,
+                                  ),
                                   icon: Icon(
                                     Icons.navigate_next_rounded,
                                     color: FlutterFlowTheme.of(context)

@@ -45,7 +45,9 @@ class _HomePresnceWidgetState extends State<HomePresnceWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         title: Text(
-          'Presence',
+          FFLocalizations.of(context).getText(
+            'p362v4s0' /* Presence */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Inter Tight',
                 color: FlutterFlowTheme.of(context).primaryBackground,
@@ -109,7 +111,9 @@ class _HomePresnceWidgetState extends State<HomePresnceWidget> {
                         onPressed: () async {
                           context.pushNamed(PresenceWidget.routeName);
                         },
-                        text: 'Check Presence Today',
+                        text: FFLocalizations.of(context).getText(
+                          'fc1pvdu3' /* Check Presence Today */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -142,7 +146,9 @@ class _HomePresnceWidgetState extends State<HomePresnceWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Presence History',
+                  FFLocalizations.of(context).getText(
+                    'vbsos03u' /* Presence History */,
+                  ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Inter',
                         fontSize: 18.0,
@@ -240,8 +246,13 @@ class _HomePresnceWidgetState extends State<HomePresnceWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            dateTimeFormat("yMd",
-                                                listViewPresenceRecord.date!),
+                                            dateTimeFormat(
+                                              "yMd",
+                                              listViewPresenceRecord.date!,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(

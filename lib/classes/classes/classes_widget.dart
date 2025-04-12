@@ -45,7 +45,9 @@ class _ClassesWidgetState extends State<ClassesWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         title: Text(
-          'Classes',
+          FFLocalizations.of(context).getText(
+            'pqoyyrut' /* Classes */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Inter Tight',
                 color: FlutterFlowTheme.of(context).primaryBackground,

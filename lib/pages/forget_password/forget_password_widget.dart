@@ -112,7 +112,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Back',
+                              FFLocalizations.of(context).getText(
+                                'sje902hh' /* Back */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -128,7 +130,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Forgot Password',
+                    FFLocalizations.of(context).getText(
+                      'z8cfo74l' /* Forgot Password */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Inter Tight',
                           letterSpacing: 0.0,
@@ -138,7 +142,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                   child: Text(
-                    'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
+                    FFLocalizations.of(context).getText(
+                      'a5pwaa7h' /* We will send you an email with... */,
+                    ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
@@ -156,13 +162,17 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                       autofillHints: [AutofillHints.email],
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Your email address...',
+                        labelText: FFLocalizations.of(context).getText(
+                          'bxv3t92h' /* Your email address... */,
+                        ),
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                 ),
-                        hintText: 'Enter your email...',
+                        hintText: FFLocalizations.of(context).getText(
+                          'nta1idy8' /* Enter your email... */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Inter',
@@ -255,7 +265,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
 
                         context.pushNamed(SignInWidget.routeName);
                       },
-                      text: 'Send Link',
+                      text: FFLocalizations.of(context).getText(
+                        'c905k17b' /* Send Link */,
+                      ),
                       options: FFButtonOptions(
                         width: 270.0,
                         height: 50.0,

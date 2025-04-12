@@ -104,7 +104,10 @@ class _Drawing2WidgetState extends State<Drawing2Widget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              'Woow Nice Draw !',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'khx7hf4h' /* Woow Nice Draw ! */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .headlineMedium
@@ -189,6 +192,12 @@ class _Drawing2WidgetState extends State<Drawing2Widget> {
                                               rate: 10,
                                               date: getCurrentTimestamp,
                                             ));
+
+                                            await buttonEnfantRecord.reference
+                                                .update(createEnfantRecordData(
+                                              score:
+                                                  buttonEnfantRecord.score + 10,
+                                            ));
                                             if (buttonEnfantRecord.gender ==
                                                 Gender.BOY) {
                                               context.pushNamed(
@@ -212,7 +221,10 @@ class _Drawing2WidgetState extends State<Drawing2Widget> {
                                               );
                                             }
                                           },
-                                          text: 'Next',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'ts3snxbn' /* Next */,
+                                          ),
                                           icon: Icon(
                                             Icons.navigate_next_rounded,
                                             color: FlutterFlowTheme.of(context)

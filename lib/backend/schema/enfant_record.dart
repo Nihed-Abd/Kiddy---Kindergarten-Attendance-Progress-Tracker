@@ -56,6 +56,11 @@ class EnfantRecord extends FirestoreRecord {
   DocumentReference? get classe => _classe;
   bool hasClasse() => _classe != null;
 
+  // "score" field.
+  int? _score;
+  int get score => _score ?? 0;
+  bool hasScore() => _score != null;
+
   void _initializeFields() {
     _nomComplet = snapshotData['nomComplet'] as String?;
     _picture = snapshotData['picture'] as String?;
@@ -67,6 +72,7 @@ class EnfantRecord extends FirestoreRecord {
         ? snapshotData['gender']
         : deserializeEnum<Gender>(snapshotData['gender']);
     _classe = snapshotData['classe'] as DocumentReference?;
+    _score = castToType<int>(snapshotData['score']);
   }
 
   static CollectionReference get collection =>
@@ -111,6 +117,7 @@ Map<String, dynamic> createEnfantRecordData({
   String? motivate,
   Gender? gender,
   DocumentReference? classe,
+  int? score,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -122,6 +129,7 @@ Map<String, dynamic> createEnfantRecordData({
       'motivate': motivate,
       'gender': gender,
       'classe': classe,
+      'score': score,
     }.withoutNulls,
   );
 
@@ -140,7 +148,8 @@ class EnfantRecordDocumentEquality implements Equality<EnfantRecord> {
         e1?.numTelParent == e2?.numTelParent &&
         e1?.motivate == e2?.motivate &&
         e1?.gender == e2?.gender &&
-        e1?.classe == e2?.classe;
+        e1?.classe == e2?.classe &&
+        e1?.score == e2?.score;
   }
 
   @override
@@ -152,7 +161,8 @@ class EnfantRecordDocumentEquality implements Equality<EnfantRecord> {
         e?.numTelParent,
         e?.motivate,
         e?.gender,
-        e?.classe
+        e?.classe,
+        e?.score
       ]);
 
   @override

@@ -91,7 +91,9 @@ class _PresenceDetailsWidgetState extends State<PresenceDetailsWidget> {
                 },
               ),
               title: Text(
-                'Presence List',
+                FFLocalizations.of(context).getText(
+                  'nzn4ku8n' /* Presence List */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Inter Tight',
                       color: FlutterFlowTheme.of(context).primaryBackground,
@@ -113,7 +115,10 @@ class _PresenceDetailsWidgetState extends State<PresenceDetailsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
                       dateTimeFormat(
-                          "MMMMEEEEd", presenceDetailsPresenceRecord.date!),
+                        "MMMMEEEEd",
+                        presenceDetailsPresenceRecord.date!,
+                        locale: FFLocalizations.of(context).languageCode,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
                             fontSize: 24.0,

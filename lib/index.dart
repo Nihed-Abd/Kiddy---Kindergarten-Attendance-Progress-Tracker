@@ -35,3 +35,4 @@ export '/presence/presence_details/presence_details_widget.dart'
     show PresenceDetailsWidget;
 export '/presence/presence_by_classes/presence_by_classes_widget.dart'
     show PresenceByClassesWidget;
+export '/pages/settings/settings_widget.dart' show SettingsWidget;

@@ -59,7 +59,9 @@ class _ChooseKidWidgetState extends State<ChooseKidWidget> {
           },
         ),
         title: Text(
-          'Select Kid',
+          FFLocalizations.of(context).getText(
+            '3p0agmn0' /* Select Kid */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Inter Tight',
                 color: FlutterFlowTheme.of(context).primaryBackground,

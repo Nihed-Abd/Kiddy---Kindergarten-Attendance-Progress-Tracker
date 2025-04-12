@@ -13,11 +13,15 @@ class SignInModel extends FlutterFlowModel<SignInWidget> {
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Please enter email address';
+      return FFLocalizations.of(context).getText(
+        '9dpggc4e' /* Please enter email address */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Please enter email address';
+      return FFLocalizations.of(context).getText(
+        'hj969z58' /* Please enter email address */,
+      );
     }
     return null;
   }
@@ -29,7 +33,9 @@ class SignInModel extends FlutterFlowModel<SignInWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Please enter password';
+      return FFLocalizations.of(context).getText(
+        '1n9hrtun' /* Please enter password */,
+      );
     }
 
     return null;

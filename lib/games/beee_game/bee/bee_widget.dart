@@ -94,6 +94,11 @@ class _BeeWidgetState extends State<BeeWidget> {
                         rate: 10,
                         date: getCurrentTimestamp,
                       ));
+
+                      await buttonEnfantRecord.reference
+                          .update(createEnfantRecordData(
+                        score: buttonEnfantRecord.score + 10,
+                      ));
                       if (buttonEnfantRecord.gender == Gender.BOY) {
                         context.pushNamed(
                           BoyWinnerWidget.routeName,
@@ -116,7 +121,9 @@ class _BeeWidgetState extends State<BeeWidget> {
                         );
                       }
                     },
-                    text: 'Next',
+                    text: FFLocalizations.of(context).getText(
+                      '6od2hn0r' /* Next */,
+                    ),
                     options: FFButtonOptions(
                       width: 120.0,
                       height: 40.0,

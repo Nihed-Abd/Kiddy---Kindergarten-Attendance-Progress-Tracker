@@ -146,7 +146,10 @@ class _PresenceByClassesWidgetState extends State<PresenceByClassesWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
                       dateTimeFormat(
-                          "MMMMEEEEd", presenceByClassesPresenceRecord.date!),
+                        "MMMMEEEEd",
+                        presenceByClassesPresenceRecord.date!,
+                        locale: FFLocalizations.of(context).languageCode,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
                             fontSize: 24.0,

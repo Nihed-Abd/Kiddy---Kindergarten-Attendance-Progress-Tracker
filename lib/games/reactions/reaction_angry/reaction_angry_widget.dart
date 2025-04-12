@@ -175,7 +175,9 @@ class _ReactionAngryWidgetState extends State<ReactionAngryWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'OoOH !',
+                                    FFLocalizations.of(context).getText(
+                                      '5ct7d3jl' /* OoOH ! */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -196,7 +198,9 @@ class _ReactionAngryWidgetState extends State<ReactionAngryWidget>
 
                               _model.soundPlayer?.stop();
                             },
-                            text: 'Next',
+                            text: FFLocalizations.of(context).getText(
+                              'c87rd90x' /* Next */,
+                            ),
                             icon: Icon(
                               Icons.navigate_next_rounded,
                               color: FlutterFlowTheme.of(context)

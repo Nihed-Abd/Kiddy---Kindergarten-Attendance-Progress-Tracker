@@ -142,7 +142,9 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                     child: Text(
-                      'What\'s This ?',
+                      FFLocalizations.of(context).getText(
+                        '8320t3gl' /* What's This ? */,
+                      ),
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Inter Tight',
                             color:
@@ -208,6 +210,11 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                                   rate: 10,
                                   date: getCurrentTimestamp,
                                 ));
+
+                                await buttonEnfantRecord.reference
+                                    .update(createEnfantRecordData(
+                                  score: buttonEnfantRecord.score + 10,
+                                ));
                                 if (buttonEnfantRecord.gender == Gender.BOY) {
                                   context.pushNamed(
                                     BoyWinnerWidget.routeName,
@@ -230,7 +237,9 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                                   );
                                 }
                               },
-                              text: 'Apple',
+                              text: FFLocalizations.of(context).getText(
+                                '1eqotl9k' /* Apple */,
+                              ),
                               options: FFButtonOptions(
                                 height: 60.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -294,7 +303,9 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                               },
                             ).then((value) => safeSetState(() {}));
                           },
-                          text: 'strawberry',
+                          text: FFLocalizations.of(context).getText(
+                            'bbe70t2e' /* strawberry */,
+                          ),
                           options: FFButtonOptions(
                             height: 60.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -355,7 +366,9 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                               },
                             ).then((value) => safeSetState(() {}));
                           },
-                          text: 'Orange',
+                          text: FFLocalizations.of(context).getText(
+                            'apmi01tk' /* Orange */,
+                          ),
                           options: FFButtonOptions(
                             height: 60.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -416,7 +429,9 @@ class _QuizGameWidgetState extends State<QuizGameWidget>
                               },
                             ).then((value) => safeSetState(() {}));
                           },
-                          text: 'Banana',
+                          text: FFLocalizations.of(context).getText(
+                            'pwld5fjk' /* Banana */,
+                          ),
                           options: FFButtonOptions(
                             height: 60.0,
                             padding: EdgeInsetsDirectional.fromSTEB(

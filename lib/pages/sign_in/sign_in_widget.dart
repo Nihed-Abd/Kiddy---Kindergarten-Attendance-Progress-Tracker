@@ -117,7 +117,9 @@ class _SignInWidgetState extends State<SignInWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 0.0),
                           child: Text(
-                            'Sign in',
+                            FFLocalizations.of(context).getText(
+                              'durrbkmo' /* Sign in */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -137,7 +139,9 @@ class _SignInWidgetState extends State<SignInWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 21.0, 0.0, 26.0),
                             child: Text(
-                              'Welcome back, please log in to continue \nyour journey',
+                              FFLocalizations.of(context).getText(
+                                'prs6xc0p' /* Welcome back, please log in to... */,
+                              ),
                               textAlign: TextAlign.center,
                               maxLines: 2,
                               style: FlutterFlowTheme.of(context)
@@ -159,7 +163,9 @@ class _SignInWidgetState extends State<SignInWidget>
                           textInputAction: TextInputAction.next,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Email address',
+                            labelText: FFLocalizations.of(context).getText(
+                              'n9vfycbq' /* Email address */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -169,7 +175,9 @@ class _SignInWidgetState extends State<SignInWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Email address',
+                            hintText: FFLocalizations.of(context).getText(
+                              '5wli7ku1' /* Email address */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -240,7 +248,9 @@ class _SignInWidgetState extends State<SignInWidget>
                             textInputAction: TextInputAction.done,
                             obscureText: !_model.passwordVisibility,
                             decoration: InputDecoration(
-                              labelText: 'Password',
+                              labelText: FFLocalizations.of(context).getText(
+                                '8xcshr2c' /* Password */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -250,7 +260,9 @@ class _SignInWidgetState extends State<SignInWidget>
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Password',
+                              hintText: FFLocalizations.of(context).getText(
+                                '7tn7e0c3' /* Password */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -343,7 +355,9 @@ class _SignInWidgetState extends State<SignInWidget>
                                     .pushNamed(ForgetPasswordWidget.routeName);
                               },
                               child: Text(
-                                'Forgot password?',
+                                FFLocalizations.of(context).getText(
+                                  'f6ngt3l9' /* Forgot password? */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -377,7 +391,9 @@ class _SignInWidgetState extends State<SignInWidget>
                             context.goNamedAuth(
                                 HomeWidget.routeName, context.mounted);
                           },
-                          text: 'Sign in',
+                          text: FFLocalizations.of(context).getText(
+                            'eo7rslz6' /* Sign in */,
+                          ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 56.0,
@@ -425,7 +441,9 @@ class _SignInWidgetState extends State<SignInWidget>
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Don’t have an account? ',
+                          text: FFLocalizations.of(context).getText(
+                            '1ymrqool' /* Don’t have an account?  */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
@@ -437,7 +455,9 @@ class _SignInWidgetState extends State<SignInWidget>
                               ),
                         ),
                         TextSpan(
-                          text: ' Sign up',
+                          text: FFLocalizations.of(context).getText(
+                            'k8dpde54' /*  Sign up */,
+                          ),
                           style: GoogleFonts.getFont(
                             'Roboto',
                             color: FlutterFlowTheme.of(context).primary,

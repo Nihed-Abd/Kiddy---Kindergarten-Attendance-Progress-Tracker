@@ -344,9 +344,13 @@ class _KidDetailsWidgetState extends State<KidDetailsWidget>
                                               children: [
                                                 Text(
                                                   dateTimeFormat(
-                                                      "d/M/y",
-                                                      columnEnfantRecord
-                                                          .dateBirth!),
+                                                    "d/M/y",
+                                                    columnEnfantRecord
+                                                        .dateBirth!,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -437,7 +441,9 @@ class _KidDetailsWidgetState extends State<KidDetailsWidget>
                             color: FlutterFlowTheme.of(context).secondary,
                           ),
                           Text(
-                            'Parents Phone Number',
+                            FFLocalizations.of(context).getText(
+                              'ea9023rz' /* Parents Phone Number */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -513,7 +519,9 @@ class _KidDetailsWidgetState extends State<KidDetailsWidget>
                             color: FlutterFlowTheme.of(context).secondary,
                           ),
                           Text(
-                            'Medical  Folder',
+                            FFLocalizations.of(context).getText(
+                              'ja9balmz' /* Medical  Folder */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(

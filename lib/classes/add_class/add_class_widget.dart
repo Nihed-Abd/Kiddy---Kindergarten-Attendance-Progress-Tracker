@@ -61,7 +61,9 @@ class _AddClassWidgetState extends State<AddClassWidget> {
           ),
         ),
         title: Text(
-          'Add new Class',
+          FFLocalizations.of(context).getText(
+            'b2257pks' /* Add new Class */,
+          ),
           style: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Inter Tight',
                 color: FlutterFlowTheme.of(context).primaryBackground,
@@ -85,14 +87,18 @@ class _AddClassWidgetState extends State<AddClassWidget> {
                   focusNode: _model.textFieldFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Class Name',
+                    labelText: FFLocalizations.of(context).getText(
+                      'gb323pp2' /* Class Name */,
+                    ),
                     labelStyle:
                         FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
                               color: Colors.black,
                               letterSpacing: 0.0,
                             ),
-                    hintText: 'Class Name',
+                    hintText: FFLocalizations.of(context).getText(
+                      'p0s5h534' /* Class Name */,
+                    ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
@@ -169,7 +175,9 @@ class _AddClassWidgetState extends State<AddClassWidget> {
 
                       context.pushNamed(ClassesWidget.routeName);
                     },
-                    text: 'Add now',
+                    text: FFLocalizations.of(context).getText(
+                      'ivp95cj2' /* Add now */,
+                    ),
                     options: FFButtonOptions(
                       width: 340.0,
                       height: 60.0,

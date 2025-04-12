@@ -104,7 +104,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                 child: Text(
-                  'Sign up',
+                  FFLocalizations.of(context).getText(
+                    'bnttitxx' /* Sign up */,
+                  ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Roboto',
@@ -118,7 +120,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 13.0),
                 child: Text(
-                  'Sign up and begin your journey to the\n next level',
+                  FFLocalizations.of(context).getText(
+                    '51mkhzzn' /* Sign up and begin your journey... */,
+                  ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -154,7 +158,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                           textInputAction: TextInputAction.next,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'First name',
+                            labelText: FFLocalizations.of(context).getText(
+                              '6p8m77dr' /* First name */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -164,7 +170,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'First name',
+                            hintText: FFLocalizations.of(context).getText(
+                              '8soj5d8c' /* First name */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -234,7 +242,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             textInputAction: TextInputAction.next,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Email address',
+                              labelText: FFLocalizations.of(context).getText(
+                                '9krott77' /* Email address */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -244,7 +254,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Email address',
+                              hintText: FFLocalizations.of(context).getText(
+                                '7f2d89k4' /* Email address */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -314,7 +326,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                           textInputAction: TextInputAction.done,
                           obscureText: !_model.passwordVisibility1,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: FFLocalizations.of(context).getText(
+                              '3bbr9ibv' /* Password */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -324,7 +338,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Password',
+                            hintText: FFLocalizations.of(context).getText(
+                              'h7nwuq6q' /* Password */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -409,7 +425,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                             textInputAction: TextInputAction.done,
                             obscureText: !_model.passwordVisibility2,
                             decoration: InputDecoration(
-                              labelText: 'Confirm Password',
+                              labelText: FFLocalizations.of(context).getText(
+                                '811p5nhl' /* Confirm Password */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -419,7 +437,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Confirm Password',
+                              hintText: FFLocalizations.of(context).getText(
+                                '3lgeslm0' /* Confirm Password */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -534,7 +554,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               context.goNamedAuth(
                                   HomeWidget.routeName, context.mounted);
                             },
-                            text: 'Sign up',
+                            text: FFLocalizations.of(context).getText(
+                              'n80r0nkd' /* Sign up */,
+                            ),
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 56.0,
@@ -583,7 +605,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Already have an account? ',
+                          text: FFLocalizations.of(context).getText(
+                            '675y4yl2' /* Already have an account?  */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
@@ -595,7 +619,9 @@ class _SignUpWidgetState extends State<SignUpWidget>
                               ),
                         ),
                         TextSpan(
-                          text: ' Sign in',
+                          text: FFLocalizations.of(context).getText(
+                            'zyp2vxna' /*  Sign in */,
+                          ),
                           style: TextStyle(
                             color: FlutterFlowTheme.of(context).primary,
                             fontWeight: FontWeight.w500,
