@@ -398,10 +398,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Presence
   {
-    'xpsm3nxp': {
-      'en': 'Search',
-      'ar': 'يبحث',
-    },
     'qtsv9shd': {
       'en': 'Today Presence',
       'ar': 'الحضور اليوم',
@@ -636,21 +632,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الرئيسية ',
     },
   },
-  // Drawing2
-  {
-    'khx7hf4h': {
-      'en': 'Woow Nice Draw !',
-      'ar': 'واو رسم جميل!',
-    },
-    'ts3snxbn': {
-      'en': 'Next',
-      'ar': 'التالي',
-    },
-    'f1s2w7eg': {
-      'en': 'Home',
-      'ar': 'الرئيسية ',
-    },
-  },
   // QuizGame
   {
     '8320t3gl': {
@@ -778,11 +759,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'w62x0buc': {
       'en': 'عربية',
-      'ar': '',
+      'ar': 'عربية',
     },
     'pqnujf1w': {
       'en': 'English',
-      'ar': '',
+      'ar': 'English',
     },
   },
   // Miscellaneous

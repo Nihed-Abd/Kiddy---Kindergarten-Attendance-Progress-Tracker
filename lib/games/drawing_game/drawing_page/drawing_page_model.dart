@@ -9,7 +9,6 @@ class DrawingPageModel extends FlutterFlowModel<DrawingPageWidget> {
 
   // State field(s) for Signature widget.
   SignatureController? signatureController;
-  String uploadedSignatureUrl = '';
 
   @override
   void initState(BuildContext context) {}

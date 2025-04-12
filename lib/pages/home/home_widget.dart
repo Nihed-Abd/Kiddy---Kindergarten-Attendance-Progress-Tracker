@@ -491,7 +491,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           ?.nomComplet,
                                                   score: homeEnfantRecordList
                                                       .firstOrNull!.score,
-                                                  avatarSize: 150.0,
+                                                  avatarSize: 120.0,
                                                 ),
                                               ),
                                             ),

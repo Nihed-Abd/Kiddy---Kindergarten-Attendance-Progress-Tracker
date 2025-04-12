@@ -1,9 +1,9 @@
-import '/backend/firebase_storage/storage.dart';
+import '/backend/backend.dart';
+import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -212,122 +212,147 @@ class _DrawingPageWidgetState extends State<DrawingPageWidget> {
                                                                   32.0,
                                                                   32.0,
                                                                   0.0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () async {
-                                                          final signatureImage =
-                                                              await _model
-                                                                  .signatureController!
-                                                                  .toPngBytes();
-                                                          if (signatureImage ==
-                                                              null) {
-                                                            showUploadMessage(
-                                                              context,
-                                                              'Signature is empty.',
+                                                      child: StreamBuilder<
+                                                          EnfantRecord>(
+                                                        stream: EnfantRecord
+                                                            .getDocument(
+                                                                widget.id!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             );
-                                                            return;
-                                                          }
-                                                          showUploadMessage(
-                                                            context,
-                                                            'Uploading signature...',
-                                                            showLoading: true,
-                                                          );
-                                                          final downloadUrl =
-                                                              (await uploadData(
-                                                                  getSignatureStoragePath(),
-                                                                  signatureImage));
-
-                                                          ScaffoldMessenger.of(
-                                                                  context)
-                                                              .hideCurrentSnackBar();
-                                                          if (downloadUrl !=
-                                                              null) {
-                                                            safeSetState(() =>
-                                                                _model.uploadedSignatureUrl =
-                                                                    downloadUrl);
-                                                            showUploadMessage(
-                                                              context,
-                                                              'Success!',
-                                                            );
-                                                          } else {
-                                                            showUploadMessage(
-                                                              context,
-                                                              'Failed to upload signature.',
-                                                            );
-                                                            return;
                                                           }
 
-                                                          context.pushNamed(
-                                                            Drawing2Widget
-                                                                .routeName,
-                                                            queryParameters: {
-                                                              'id':
-                                                                  serializeParam(
-                                                                widget.id,
-                                                                ParamType
-                                                                    .DocumentReference,
+                                                          final buttonEnfantRecord =
+                                                              snapshot.data!;
+
+                                                          return FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              await RateRecord
+                                                                      .createDoc(
+                                                                          widget
+                                                                              .id!)
+                                                                  .set(
+                                                                      createRateRecordData(
+                                                                rate: 10,
+                                                                date:
+                                                                    getCurrentTimestamp,
+                                                              ));
+
+                                                              await widget.id!
+                                                                  .update(
+                                                                      createEnfantRecordData(
+                                                                score: buttonEnfantRecord
+                                                                        .score +
+                                                                    10,
+                                                              ));
+                                                              if (buttonEnfantRecord
+                                                                      .gender ==
+                                                                  Gender.BOY) {
+                                                                context
+                                                                    .pushNamed(
+                                                                  BoyWinnerWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'id':
+                                                                        serializeParam(
+                                                                      widget
+                                                                          .id,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  GirlWinnerWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'id':
+                                                                        serializeParam(
+                                                                      widget
+                                                                          .id,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              }
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'gry64qfe' /* Next */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 44.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter Tight',
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                              elevation: 0.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
                                                               ),
-                                                              'image':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .uploadedSignatureUrl,
-                                                                ParamType
-                                                                    .String,
-                                                              ),
-                                                            }.withoutNulls,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
                                                           );
                                                         },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'gry64qfe' /* Next */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          width:
-                                                              double.infinity,
-                                                          height: 44.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter Tight',
-                                                                    color: Colors
-                                                                        .white,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
                                                       ),
                                                     ),
                                                   ),

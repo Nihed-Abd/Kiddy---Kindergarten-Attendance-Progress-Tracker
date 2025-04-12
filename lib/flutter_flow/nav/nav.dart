@@ -246,22 +246,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: Drawing2Widget.routeName,
-          path: Drawing2Widget.routePath,
-          builder: (context, params) => Drawing2Widget(
-            id: params.getParam(
-              'id',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['enfant'],
-            ),
-            image: params.getParam(
-              'image',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
           name: QuizGameWidget.routeName,
           path: QuizGameWidget.routePath,
           builder: (context, params) => QuizGameWidget(

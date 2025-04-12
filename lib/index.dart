@@ -23,7 +23,6 @@ export '/games/winners_pages/girl_winner/girl_winner_widget.dart'
     show GirlWinnerWidget;
 export '/games/drawing_game/drawing_page/drawing_page_widget.dart'
     show DrawingPageWidget;
-export '/games/drawing_game/drawing2/drawing2_widget.dart' show Drawing2Widget;
 export '/games/quiz_game/quiz_game/quiz_game_widget.dart' show QuizGameWidget;
 export '/games/reactions/reaction_angry/reaction_angry_widget.dart'
     show ReactionAngryWidget;
