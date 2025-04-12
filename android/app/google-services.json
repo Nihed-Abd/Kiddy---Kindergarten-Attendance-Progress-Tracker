@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1095452666056",
+    "project_id": "project-kids-bbz6he",
+    "storage_bucket": "project-kids-bbz6he.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095452666056:android:790dad3f7b695dd4ed1dfd",
+        "android_client_info": {
+          "package_name": "com.mycompany.projectkids"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8wp1AfQj0axvZiGG-eCosGkSk1bYsorw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
