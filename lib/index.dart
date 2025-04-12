@@ -16,3 +16,6 @@ export '/classes/classes/classes_widget.dart' show ClassesWidget;
 export '/classes/add_class/add_class_widget.dart' show AddClassWidget;
 export '/games/select_game/select_game_widget.dart' show SelectGameWidget;
 export '/presence/home_presnce/home_presnce_widget.dart' show HomePresnceWidget;
+export '/games/bee_game/bee_game_widget.dart' show BeeGameWidget;
+export '/games/boy_winner/boy_winner_widget.dart' show BoyWinnerWidget;
+export '/games/girl_winner/girl_winner_widget.dart' show GirlWinnerWidget;

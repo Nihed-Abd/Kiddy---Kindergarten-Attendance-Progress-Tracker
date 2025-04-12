@@ -8,7 +8,6 @@ import '/backend/schema/structs/index.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -197,6 +196,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'HomePresnce')
               : HomePresnceWidget(),
+        ),
+        FFRoute(
+          name: BeeGameWidget.routeName,
+          path: BeeGameWidget.routePath,
+          builder: (context, params) => BeeGameWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: BoyWinnerWidget.routeName,
+          path: BoyWinnerWidget.routePath,
+          builder: (context, params) => BoyWinnerWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: GirlWinnerWidget.routeName,
+          path: GirlWinnerWidget.routePath,
+          builder: (context, params) => GirlWinnerWidget(
+            id: params.getParam(
+              'id',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['enfant'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -383,15 +418,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/2a417171-52c1-42ef-8a8a-71b1dfb4633d.png',
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : page;
